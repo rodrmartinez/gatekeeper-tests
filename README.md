@@ -18,6 +18,9 @@ Gatekeeper tests based on https://github.com/open-policy-agent/gatekeeper-librar
 ### Usage
 
 Apply the `template.yaml` and `constraint.yaml` provided in each directory under `library/`
+
+#### Example:
+
 ```bash
 cd library/pod-security-policy/privileged-containers/
 # Define constraint template
@@ -25,8 +28,7 @@ kubectl apply -f template.yaml
 # Deploy constraint
 kubectl apply -f samples/psp-privileged-container/constraint.yaml
 ```
-
-#### Create a Pod without privileges
+ Create a Pod without privileges
 ```bash
 kubectl apply -f samples/psp-privileged-container/example_allowed.yaml 
 ```
@@ -34,7 +36,7 @@ The pod should be created
 ```bash
 pod/nginx-privileged-allowed created
 ```
-#### Create a Pod with **privilege:true** label
+Create a Pod with **privilege:true** label
 
 ```bash
 kubectl apply -f samples/psp-privileged-container/example_disallowed.yaml 
